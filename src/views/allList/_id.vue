@@ -84,7 +84,6 @@ export default {
     },
     computed: {
         fetchMonth() {
-            // let getMonth = []
             this.$store.getters['costs/getCosts'].forEach(cost => {
                 if( cost.costId == this.$route.params.id) {
                     this.cost = cost

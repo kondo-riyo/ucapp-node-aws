@@ -1,8 +1,5 @@
 <template>
     <div class="space__top__50 fadeIn__base">
-        <!-- <div>
-            {{fetchYear}}
-        </div> -->
         <div class="year__title">
             <div class="flex__year base__title__year">
                 <div>{{fetchYear[0].year}}</div>
@@ -37,11 +34,7 @@
 export default {
     computed:{
         fetchYear() {
-            // let fetchYear = this.$route.params.year
-            // return fetchYear
-            // let costs = this.$store.getters['costs/getCosts']
             let getYear = []
-            // this.$store.getters['costs/getCosts'].forEach(cost => {
             this.$store.state.costs.costs.forEach(cost => {
                 if( cost.year == this.$route.params.year) {
                     getYear.push(cost)
@@ -65,9 +58,6 @@ export default {
 </script>
 <style lang="scss">
 @import '../../scss/space.scss';
-// .alllist__year {
-//     margin: 0 auto;
-// }
 .flex__year {
     display: flex;
     justify-content: space-around;
@@ -78,10 +68,6 @@ export default {
     justify-content: center;
 }
 .year__title {
-    // display: flex;
-    // justify-content: space-around;
-    // align-items: center;
-    // width: 560px;
     width: 560px;
     display: flex;
     justify-content: center;
@@ -90,7 +76,6 @@ export default {
 }
 .base__title__year {
     width: 500px;
-    // width: 50%;
     padding: 0 22px;
     font-weight: bold;
     color: #673a15;
